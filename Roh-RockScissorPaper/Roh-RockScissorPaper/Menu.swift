@@ -10,8 +10,8 @@ enum Menu {
     case mgb(userHand: Hand)
     case exit
     
-    init(input: Int, isMGB: Bool? = nil) throws {
-        if let hand = Hand(rawValue: input), let _ = isMGB {
+    init(input: Int, game isMGB: Bool) throws {
+        if let hand = Hand(rawValue: input), isMGB {
             self = .mgb(userHand: hand)
         }
         else if let hand = Hand(rawValue: input){

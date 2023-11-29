@@ -7,21 +7,22 @@
 
 
 class MessageHandling {
+    
+    let pc: String = "컴퓨터"
+    let user: String = "사용자"
+    
     enum Message: String {
         case menu = "가위(1), 바위(2), 보(3)! <종료 : 0> :"
-//        case invalidError = "잘못된 입력입니다. 다시 시도해주세요."
         case draw = "비겼습니다!"
         case win = "이겼습니다!"
         case lose = "졌습니다!"
         case exit = "게임 종료"
-        
+        case victory = "의 승리"
     }
     
     func input() throws -> String {
         guard let pureInput = Swift.readLine() else { throw ErrorHandling.InvalidInputError }
         let refinedInput = pureInput.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        //        return refinedInput.isEmpty ? throw ErrorName.InvalidInputError : refinedInput?
         if refinedInput.isEmpty {
             throw ErrorHandling.InvalidInputError
         }
@@ -32,6 +33,10 @@ class MessageHandling {
     
     func output(_ msg: Message, terminator: String? = nil) {
         Swift.print(msg.rawValue, terminator: terminator ?? "\n")
+    }
+    
+    func output(addMsg: String, _ msg: Message, terminator: String? = nil) {
+        Swift.print("\(addMsg)\(msg.rawValue)", terminator: terminator ?? "\n")
     }
     
     func output(errorMsg msg: String, terminator: String? = nil) {

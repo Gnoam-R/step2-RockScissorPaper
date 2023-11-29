@@ -10,3 +10,10 @@ enum RSPResult {
     case lose
     case draw
 }
+
+enum MGBResult {
+    case win
+    case lose
+    case firstHit
+    case secondHit
+}
