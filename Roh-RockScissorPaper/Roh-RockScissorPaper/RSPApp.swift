@@ -26,6 +26,7 @@ class RSPApp {
                 let menu = try Menu(input: intUserInput)
             // 3. 메뉴 처리
                 processMenu(menu)
+            // 4. 에러 처리
             } catch let error as ErrorHandling{
                 message.output(errorMsg: error.rawValue)
             } catch {
@@ -39,11 +40,37 @@ extension RSPApp {
     private func processMenu(_ menu: Menu) {
         switch menu {
         case .rsp(let userHand):
-            print("rsp", userHand)
+            RSPGame(userHand)
         case .mgb(let userHand):
-            print("mgb", userHand)
+            MGBGame(userHand)
         case .exit:
-            print("test")
+            message.output(.exit)
+        }
+    }
+    
+    func RSPGame(_ userHand: Hand) {
+        let userHand = userHand
+        let pcHand = Hand.allCases.randomElement() ?? .rock
+        let userResult = judgeUserWin(userHand, pcHand)
+    }
+    func MGBGame(_ userHand: Hand) {
+        let userHand = userHand
+        let pcHand = Hand.allCases.randomElement() ?? .rock
+        let userResult = judgeUserWin(userHand, pcHand, isMGB: true)
+    }
+    
+    private func judgeUserWin(_ userPlayerHand: Hand, _ pcPlayerHand: Hand, isMGB: Bool? = nil) -> RSPResult {
+        if let isMGB {
+            let MGB = true
+            let RSPResult = userPlayerHand.wins(pcPlayerHand, game: MGB) ? RSPResult.win : RSPResult.lose
+            return RSPResult
+        }
+        else if userPlayerHand == pcPlayerHand {
+            return .draw
+        }
+        else {
+            let RSPResult = userPlayerHand.wins(pcPlayerHand) ? RSPResult.win : RSPResult.lose
+            return RSPResult
         }
     }
 }

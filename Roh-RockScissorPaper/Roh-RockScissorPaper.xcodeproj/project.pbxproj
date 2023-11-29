@@ -13,6 +13,7 @@
 		CC2CECAF2B157DC200BA30D9 /* MessageHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CECAE2B157DC200BA30D9 /* MessageHandling.swift */; };
 		CC2CECB12B15854100BA30D9 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CECB02B15854100BA30D9 /* Menu.swift */; };
 		CC2CECC62B1585A600BA30D9 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CECC52B1585A600BA30D9 /* Hand.swift */; };
+		CC2CECC82B15CB2D00BA30D9 /* RSPResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2CECC72B15CB2D00BA30D9 /* RSPResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		CC2CECAE2B157DC200BA30D9 /* MessageHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandling.swift; sourceTree = "<group>"; };
 		CC2CECB02B15854100BA30D9 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CC2CECC52B1585A600BA30D9 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		CC2CECC72B15CB2D00BA30D9 /* RSPResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSPResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				CC2CECAA2B15737200BA30D9 /* RSPApp.swift */,
 				CC2CECB02B15854100BA30D9 /* Menu.swift */,
 				CC2CECC52B1585A600BA30D9 /* Hand.swift */,
+				CC2CECC72B15CB2D00BA30D9 /* RSPResult.swift */,
 			);
 			path = "Roh-RockScissorPaper";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 				CC2CECAB2B15737200BA30D9 /* RSPApp.swift in Sources */,
 				CC2CECC62B1585A600BA30D9 /* Hand.swift in Sources */,
 				CC2CECAF2B157DC200BA30D9 /* MessageHandling.swift in Sources */,
+				CC2CECC82B15CB2D00BA30D9 /* RSPResult.swift in Sources */,
 				CC2CECAD2B1574D100BA30D9 /* ErrorHandling.swift in Sources */,
 				CC2CECB12B15854100BA30D9 /* Menu.swift in Sources */,
 			);
