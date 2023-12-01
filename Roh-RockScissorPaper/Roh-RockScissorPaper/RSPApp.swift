@@ -8,7 +8,7 @@
 import Foundation
 
 class RSPApp {
-    
+
     private var message: MessageHandling
     private var isRunning: Bool = true
     private var isMGB: Bool = false
@@ -131,19 +131,19 @@ extension RSPApp {
     private func isUserAttack(First result: Bool) {
         userFirst = result
         if userFirst {
-            firstAttacker = message.user
+            firstAttacker = Player.user.rawValue
         }
         else {
-            firstAttacker = message.pc
+            firstAttacker = Player.pc.rawValue
         }
     }
     
     private func isUserWinMGB() {
         if userFirst {
-            message.output(addMsg: message.user, .victory)
+            message.output(addMsg: Player.user.rawValue, .victory)
         }
         else {
-            message.output(addMsg: message.pc, .victory)
+            message.output(addMsg: Player.pc.rawValue, .victory)
         }
     }
     
