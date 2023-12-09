@@ -24,8 +24,11 @@ class MessageHandling {
         Swift.print(msg.rawValue, terminator: terminator ?? "\n")
     }
     
-    func output(addMsg: String, _ msg: Message, terminator: String? = nil) {
-        Swift.print("\(addMsg)\(msg.rawValue)", terminator: terminator ?? "\n")
+    func output(addMsg: String?, _ msg: Message, terminator: String? = nil) throws {
+        guard let resultMsg = addMsg else {
+            throw ErrorHandling.InvalidInputError
+        }
+        Swift.print("\(resultMsg)\(msg.rawValue)", terminator: terminator ?? "\n")
     }
     
     func output(errorMsg msg: String, terminator: String? = nil) {

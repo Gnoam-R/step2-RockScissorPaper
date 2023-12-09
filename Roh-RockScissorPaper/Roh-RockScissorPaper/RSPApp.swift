@@ -22,11 +22,11 @@ class RSPApp {
     func run() {
         // loop
         while isRunning {
-            // 사용자 메뉴 출력
-            if isMGB { message.output(addMsg: "[\(firstAttacker) 턴]",.menu) }
-            else { message.output(.menu) }
-            // 사용자 입력 처리
             do {
+                // 사용자 메뉴 출력
+                if isMGB { try message.output(addMsg: "[\(firstAttacker) 턴]",.menu) }
+                else { message.output(.menu) }
+                // 사용자 입력 처리
                 let strMsg = try message.input()
                 let intUserInput = try message.strToInt(in: strMsg)
                 // 게임 메뉴 확인 및 실행
@@ -140,10 +140,10 @@ extension RSPApp {
     
     private func isUserWinMGB() {
         if userFirst {
-            message.output(addMsg: Player.user.rawValue, .victory)
+            try message.output(addMsg: Player.user.rawValue, .victory)
         }
         else {
-            message.output(addMsg: Player.pc.rawValue, .victory)
+            try message.output(addMsg: Player.pc.rawValue, .victory)
         }
     }
     
